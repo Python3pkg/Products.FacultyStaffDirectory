@@ -27,8 +27,8 @@ schema = ATContentTypeSchema.copy() + Schema((
         multiValued=1,
         write_permission=ManageUsers,
         widget=MultiSelectionWidget(
-            label=_(u"FacultyStaffDirectory_label_FacultyStaffDirectoryRoles", default=u"Roles"),
-            description=_(u"FacultyStaffDirectory_description_FacultyStaffDirectoryRoles", default=u"The roles all people in this directory will be granted site-wide"),
+            label=_("FacultyStaffDirectory_label_FacultyStaffDirectoryRoles", default="Roles"),
+            description=_("FacultyStaffDirectory_description_FacultyStaffDirectoryRoles", default="The roles all people in this directory will be granted site-wide"),
             i18n_domain="FacultyStaffDirectory",
             ),
         ),
@@ -39,8 +39,8 @@ schema = ATContentTypeSchema.copy() + Schema((
         default=100,
         write_permission=ManageUsers,
         widget=IntegerWidget(
-            label=_(u"FacultyStaffDirectory_label_personClassificationViewThumbnailWidth", default=u"Width for thumbnails in classification view"),
-            description=_(u"FacultyStaffDirectory_description_personClassificationViewThumbnailWidth", default=u"Show all person thumbnails with a fixed width (in pixels) within the classification view"),
+            label=_("FacultyStaffDirectory_label_personClassificationViewThumbnailWidth", default="Width for thumbnails in classification view"),
+            description=_("FacultyStaffDirectory_description_personClassificationViewThumbnailWidth", default="Show all person thumbnails with a fixed width (in pixels) within the classification view"),
             i18n_domain="FacultyStaffDirectory",
             ),
         ),
@@ -151,10 +151,10 @@ class FacultyStaffDirectory(OrderedBaseFolder, ATCTContent):
         if value != self.getId():
             parent = aq_parent(aq_inner(self))
             if value in parent.objectIds():
-                return _(u"An object with id '%s' already exists in this folder") % value
+                return _("An object with id '%s' already exists in this folder") % value
         
             groups = getToolByName(self, 'portal_groups')
             if groups.getGroupById(value) is not None:
-                return _(u"A group with id '%s' already exists in the portal") % value
+                return _("A group with id '%s' already exists in the portal") % value
                 
 registerType(FacultyStaffDirectory, PROJECTNAME)

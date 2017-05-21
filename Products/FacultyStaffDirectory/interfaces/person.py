@@ -2,7 +2,7 @@
 
 from zope.interface import Interface, Attribute
 from zope import schema
-from facultystaffdirectory import IFacultyStaffDirectoryContent
+from .facultystaffdirectory import IFacultyStaffDirectoryContent
 
 
 class IPerson(IFacultyStaffDirectoryContent):
@@ -13,13 +13,13 @@ class IPersonMembership(IFacultyStaffDirectoryContent):
     """An person, which is also a user.
     """
     
-    id = schema.TextLine(title=u'Identifier',
-                         description=u'An identifier for the employee',
+    id = schema.TextLine(title='Identifier',
+                         description='An identifier for the employee',
                          required=True,
                          readonly=True)
     
-    fullname = schema.TextLine(title=u'Full name',
-                               description=u"The employee's full name for display purposes",
+    fullname = schema.TextLine(title='Full name',
+                               description="The employee's full name for display purposes",
                                required=True,
                                readonly=True)
                                

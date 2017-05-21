@@ -22,7 +22,7 @@ schema = atapi.Schema((
         name='researchTopic',
         allowable_content_types=('text/plain', 'text/structured', 'text/html',),
         widget=TinyMCEWidget(
-            label=_(u"FacultyStaffDirectory_label_researchTopic", default=u"Research Topic"),
+            label=_("FacultyStaffDirectory_label_researchTopic", default="Research Topic"),
             i18n_domain='FacultyStaffDirectory',
             allow_file_upload=False,
             rows=5,
@@ -35,7 +35,7 @@ schema = atapi.Schema((
         default="Research Topic",
         widget=atapi.StringWidget(
             visible={'edit': 'invisible', 'view': 'visible'},
-            label=_(u"FacultyStaffDirectory_label_title", default=u"Title"),
+            label=_("FacultyStaffDirectory_label_title", default="Title"),
             i18n_domain='FacultyStaffDirectory',
         ),
         accessor="Title"

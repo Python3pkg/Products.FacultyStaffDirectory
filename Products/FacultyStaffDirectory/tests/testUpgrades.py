@@ -35,24 +35,24 @@ class testUpgrades(testPlone):
     def test_2_to_3_upgrade_private(self):
         try:
             self.installZexp('FSD2dot1dot4_private.zexp')
-        except Exception,detail:
-            print detail
+        except Exception as detail:
+            print(detail)
         self.runUpgradeStep('1', '2')
         self.assertEquals(self.wf.getInfoFor(self.directory,'review_state'),'private')
         
     def test_2_to_3_upgrade_public(self):
         try:
             self.installZexp('FSD2dot1dot4_public.zexp')
-        except Exception,detail:
-            print detail
+        except Exception as detail:
+            print(detail)
         self.runUpgradeStep('1', '2')
         self.assertEquals(self.wf.getInfoFor(self.directory,'review_state'),'private')
 
     def test_2_to_3_upgrade_draft(self):
         try:
             self.installZexp('FSD2dot1dot4_draft.zexp')
-        except Exception,detail:
-            print detail
+        except Exception as detail:
+            print(detail)
         self.runUpgradeStep('1', '2')
         self.assertEquals(self.wf.getInfoFor(self.directory,'review_state'),'private')
         

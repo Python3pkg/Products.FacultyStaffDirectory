@@ -1,10 +1,10 @@
 """Membership adapters for FacultyStaffDirectory
 """
-import person
-import facultystaffdirectory
-import committee
-import classification
-import department
+from . import person
+from . import facultystaffdirectory
+from . import committee
+from . import classification
+from . import department
 
 
 def not_a_user_object(obj):

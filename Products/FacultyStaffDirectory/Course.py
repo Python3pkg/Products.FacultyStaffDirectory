@@ -25,7 +25,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         name='abbreviation',
         widget=atapi.StringWidget(
             size="5",
-            label=_(u"FacultyStaffDirectory_label_abbreviation", default=u"Abbreviation"),
+            label=_("FacultyStaffDirectory_label_abbreviation", default="Abbreviation"),
             i18n_domain='FacultyStaffDirectory',
         ),
         searchable=True
@@ -34,7 +34,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='number',
         widget=atapi.StringWidget(
-            label=_(u"FacultyStaffDirectory_label_number", default=u"Number"),
+            label=_("FacultyStaffDirectory_label_number", default="Number"),
             i18n_domain='FacultyStaffDirectory',
         ),
         searchable=True
@@ -44,7 +44,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         name='description',
         allowable_content_types=config.ALLOWABLE_CONTENT_TYPES,
         widget=TinyMCEWidget(
-            label=_(u"FacultyStaffDirectory_label_description", default=u"Description"),
+            label=_("FacultyStaffDirectory_label_description", default="Description"),
             i18n_domain='FacultyStaffDirectory',
         ),
         searchable=True,
@@ -57,7 +57,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         name='suffix',
         widget=atapi.StringWidget(
             size="1",
-            label=_(u"FacultyStaffDirectory_label_suffix", default=u"Suffix"),
+            label=_("FacultyStaffDirectory_label_suffix", default="Suffix"),
             i18n_domain='FacultyStaffDirectory',
         )
     ),
@@ -65,9 +65,9 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='website',
         widget=atapi.StringWidget(
-            label=_(u"FacultyStaffDirectory_label_website", default=u"Course Website"),
-            description=_(u"FacultyStaffDirectory_help_website",
-                          default=u"Example: http://www.example.com/"),
+            label=_("FacultyStaffDirectory_label_website", default="Course Website"),
+            description=_("FacultyStaffDirectory_help_website",
+                          default="Example: http://www.example.com/"),
             i18n_domain='FacultyStaffDirectory',
         ),
         validators=('isURL',)

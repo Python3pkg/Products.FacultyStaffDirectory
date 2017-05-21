@@ -26,7 +26,7 @@ schema = Schema((
     RelationField(
         name='people',
         widget=ReferenceBrowserWidget(
-            label=_(u"FacultyStaffDirectory_label_people", default=u"People"),
+            label=_("FacultyStaffDirectory_label_people", default="People"),
             i18n_domain='FacultyStaffDirectory',
             allow_browse=0,
             allow_search=1,

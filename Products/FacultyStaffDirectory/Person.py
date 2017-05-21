@@ -3,7 +3,7 @@
 __author__ = """WebLion <support@weblion.psu.edu>"""
 __docformat__ = 'plaintext'
 
-from cStringIO import StringIO
+from io import StringIO
 import logging
 import re
 
@@ -59,7 +59,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='firstName',
         widget=atapi.StringWidget(
-            label=_(u"FacultyStaffDirectory_label_firstName", default=u"First Name"),
+            label=_("FacultyStaffDirectory_label_firstName", default="First Name"),
             i18n_domain='FacultyStaffDirectory',
         ),
         required=True,
@@ -70,7 +70,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='middleName',
         widget=atapi.StringWidget(
-            label=_(u"FacultyStaffDirectory_label_middleName", default=u"Middle Name"),
+            label=_("FacultyStaffDirectory_label_middleName", default="Middle Name"),
             i18n_domain='FacultyStaffDirectory',
         ),
         required=False,
@@ -81,7 +81,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='lastName',
         widget=atapi.StringWidget(
-            label=_(u"FacultyStaffDirectory_label_lastName", default=u"Last Name"),
+            label=_("FacultyStaffDirectory_label_lastName", default="Last Name"),
             i18n_domain='FacultyStaffDirectory',
         ),
         required=True,
@@ -92,9 +92,9 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='suffix',
         widget=atapi.StringWidget(
-            label=_(u"FacultyStaffDirectory_label_suffix", default=u"Suffix"),
-            description=_(u"FacultyStaffDirectory_description_suffix",
-                          default=u"Academic, professional, honorary, and social suffixes."),
+            label=_("FacultyStaffDirectory_label_suffix", default="Suffix"),
+            description=_("FacultyStaffDirectory_description_suffix",
+                          default="Academic, professional, honorary, and social suffixes."),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Basic Information",
@@ -105,7 +105,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         name='email',
         user_property=True,
         widget=atapi.StringWidget(
-            label=_(u"FacultyStaffDirectory_label_email", default=u"Email"),
+            label=_("FacultyStaffDirectory_label_email", default="Email"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Contact Information",
@@ -116,8 +116,8 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.LinesField(
         name='jobTitles',
         widget=atapi.LinesField._properties['widget'](
-            label=_(u"FacultyStaffDirectory_label_jobTitles", default=u"Job Titles"),
-            description=_(u"FacultyStaffDirectory_description_jobTitles", default=u"One per line"),
+            label=_("FacultyStaffDirectory_label_jobTitles", default="Job Titles"),
+            description=_("FacultyStaffDirectory_description_jobTitles", default="One per line"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Professional Information",
@@ -127,7 +127,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officeAddress',
         widget=atapi.TextAreaWidget(
-            label=_(u"FacultyStaffDirectory_label_officeAddress", default=u"Office Street Address"),
+            label=_("FacultyStaffDirectory_label_officeAddress", default="Office Street Address"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Contact Information",
@@ -137,7 +137,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officeCity',
         widget=atapi.StringWidget(
-            label=_(u"FacultyStaffDirectory_label_officeCity", default=u"Office City"),
+            label=_("FacultyStaffDirectory_label_officeCity", default="Office City"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Contact Information",
@@ -147,7 +147,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officeState',
         widget=atapi.StringWidget(
-            label=_(u"FacultyStaffDirectory_label_officeState", default=u"Office State"),
+            label=_("FacultyStaffDirectory_label_officeState", default="Office State"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Contact Information"
@@ -156,7 +156,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officePostalCode',
         widget=atapi.StringWidget(
-            label=_(u"FacultyStaffDirectory_label_officePostalCode", default=u"Office Postal Code"),
+            label=_("FacultyStaffDirectory_label_officePostalCode", default="Office Postal Code"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Contact Information"
@@ -165,8 +165,8 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='officePhone',
         widget=atapi.StringWidget(
-            label=_(u"FacultyStaffDirectory_label_officePhone", default=u"Office Phone"),
-            description=_(u"FacultyStaffDirectory_description_officePhone", default=u""),
+            label=_("FacultyStaffDirectory_label_officePhone", default="Office Phone"),
+            description=_("FacultyStaffDirectory_description_officePhone", default=""),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Contact Information",
@@ -177,7 +177,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         name='image',
         schemata="Basic Information",
         widget=atapi.ImageWidget(
-            label=_(u"FacultyStaffDirectory_label_image", default=u"Image"),
+            label=_("FacultyStaffDirectory_label_image", default="Image"),
             i18n_domain='FacultyStaffDirectory',
             default_content_type='image/gif',
         ),
@@ -192,7 +192,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         name='biography',
         allowable_content_types=config.ALLOWABLE_CONTENT_TYPES,
         widget=TinyMCEWidget(
-            label=_(u"FacultyStaffDirectory_label_biography", default=u"Biography"),
+            label=_("FacultyStaffDirectory_label_biography", default="Biography"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Professional Information",
@@ -205,7 +205,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.LinesField(
         name='education',
         widget=atapi.LinesField._properties['widget'](
-            label=_(u"FacultyStaffDirectory_label_education", default=u"Education"),
+            label=_("FacultyStaffDirectory_label_education", default="Education"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Professional Information",
@@ -215,9 +215,9 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.LinesField(
         name='websites',
         widget=atapi.LinesField._properties['widget'](
-            label=_(u"FacultyStaffDirectory_label_websites", default=u"Web Sites"),
-            description=_(u"FacultyStaffDirectory_description_websites",
-                          default=u"One per line. Example: http://www.example.com/"),
+            label=_("FacultyStaffDirectory_label_websites", default="Web Sites"),
+            description=_("FacultyStaffDirectory_description_websites",
+                          default="One per line. Example: http://www.example.com/"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Professional Information",
@@ -227,9 +227,9 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.StringField(
         name='id',
         widget=atapi.StringWidget(
-            label=_(u"FacultyStaffDirectory_label_id", default=u"Access Account ID"),
+            label=_("FacultyStaffDirectory_label_id", default="Access Account ID"),
             i18n_domain='FacultyStaffDirectory',
-            description=_(u"FacultyStaffDirectory_description_id", default=u"Example: abc123"),
+            description=_("FacultyStaffDirectory_description_id", default="Example: abc123"),
         ),
         required=True,
         user_property=True,
@@ -240,7 +240,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     atapi.ComputedField(
         name='title',
         widget=atapi.ComputedField._properties['widget'](
-            label=_(u"FacultyStaffDirectory_label_fullName", default=u"Full Name"),
+            label=_("FacultyStaffDirectory_label_fullName", default="Full Name"),
             visible={'edit': 'invisible', 'view': 'visible'},
             i18n_domain='FacultyStaffDirectory',
         ),
@@ -255,7 +255,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         vocabulary="_classificationReferences",
         widget=atapi.ReferenceWidget
         (
-            label=_(u"FacultyStaffDirectory_label_classifications", default=u"Classifications"),
+            label=_("FacultyStaffDirectory_label_classifications", default="Classifications"),
             i18n_domain='FacultyStaffDirectory',
         ),
         write_permission=ASSIGN_CLASSIFICATIONS_TO_PEOPLE,
@@ -267,7 +267,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     RelationField(
         name='departments',
         widget=ReferenceBrowserWidget(
-            label=_(u"FacultyStaffDirectory_label_departments", default=u"Departments"),
+            label=_("FacultyStaffDirectory_label_departments", default="Departments"),
             i18n_domain='FacultyStaffDirectory',
             base_query="_search_departments_in_this_fsd",
             allow_browse=0,
@@ -286,7 +286,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         name='committees',
         widget=ReferenceBrowserWidget(
             visible={'edit': 'visible', 'view': 'visible'},
-            label=_(u"FacultyStaffDirectory_label_committees", default=u"Committees"),
+            label=_("FacultyStaffDirectory_label_committees", default="Committees"),
             i18n_domain='FacultyStaffDirectory',
             base_query="_search_committees_in_this_fsd",
             allow_browse=0,
@@ -304,7 +304,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
     RelationField(
         name='specialties',
         widget=ReferenceBrowserWidget(
-            label=_(u"FacultyStaffDirectory_label_specialties", default=u"Specialties"),
+            label=_("FacultyStaffDirectory_label_specialties", default="Specialties"),
             i18n_domain='FacultyStaffDirectory',
             base_query="_search_specialties_in_this_fsd",
             allow_browse=0,
@@ -326,10 +326,10 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         mode='w',
         write_permission=SetOwnPassword,
         widget=atapi.PasswordWidget(
-            label=_(u"FacultyStaffDirectory_label_password", default=u"Password"),
-            description=_(u"FacultyStaffDirectory_description_password",
-                          default=u"Password for this person (Leave blank if you "
-                                  u"don't want to change the password.)"),
+            label=_("FacultyStaffDirectory_label_password", default="Password"),
+            description=_("FacultyStaffDirectory_description_password",
+                          default="Password for this person (Leave blank if you "
+                                  "don't want to change the password.)"),
             i18n_domain='FacultyStaffDirectory',
             condition="python: modules['Products.CMFCore.utils'].getToolByName(here, 'facultystaffdirectory_tool').getUseInternalPassword() and 'FSDPerson' in modules['Products.CMFCore.utils'].getToolByName(here, 'facultystaffdirectory_tool').getEnableMembraneTypes()"  # noqa
         ),
@@ -343,10 +343,10 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         mode='w',
         write_permission=SetOwnPassword,
         widget=atapi.PasswordWidget(
-            label=_(u"FacultyStaffDirectory_label_confirmPassword", default=u"Confirm password"),
-            description=_(u"FacultyStaffDirectory_description_confirmPassword",
-                          default=u"Please re-enter the password. (Leave blank if you don't "
-                                  u"want to change the password.)"),
+            label=_("FacultyStaffDirectory_label_confirmPassword", default="Confirm password"),
+            description=_("FacultyStaffDirectory_description_confirmPassword",
+                          default="Please re-enter the password. (Leave blank if you don't "
+                                  "want to change the password.)"),
             i18n_domain='FacultyStaffDirectory',
             condition="python: modules['Products.CMFCore.utils'].getToolByName(here, 'facultystaffdirectory_tool').getUseInternalPassword() and 'FSDPerson' in modules['Products.CMFCore.utils'].getToolByName(here, 'facultystaffdirectory_tool').getEnableMembraneTypes()"  # noqa
         ),
@@ -355,8 +355,8 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
 
     atapi.StringField('userpref_language',
         widget=atapi.SelectionWidget(
-            label=_(u"label_language", default=u"Language"),
-            description=_(u"help_preferred_language", default=u"Your preferred language."),
+            label=_("label_language", default="Language"),
+            description=_("help_preferred_language", default="Your preferred language."),
             i18n_domain='plone',
             condition="python:'FSDPerson' in modules['Products.CMFCore.utils'].getToolByName(here, 'facultystaffdirectory_tool').getEnableMembraneTypes()"  # noqa
         ),
@@ -368,10 +368,10 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
 
     atapi.StringField('userpref_wysiwyg_editor',
         widget=atapi.SelectionWidget(
-            label=_(u"label_content_editor", default=u"Content editor"),
-            description=_(u"help_content_editor",
-                          default=u"Select the content editor that you would like to use. Note that "  # noqa
-                                  u"content editors often have specific browser requirements."),
+            label=_("label_content_editor", default="Content editor"),
+            description=_("help_content_editor",
+                          default="Select the content editor that you would like to use. Note that "  # noqa
+                                  "content editors often have specific browser requirements."),
             i18n_domain='plone',
             format="select",
             condition="python:'FSDPerson' in modules['Products.CMFCore.utils'].getToolByName(here, 'facultystaffdirectory_tool').getEnableMembraneTypes()"  # noqa
@@ -384,14 +384,14 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
 
     atapi.BooleanField('userpref_ext_editor',
         widget=atapi.BooleanWidget(
-            label=_(u"label_ext_editor", default=u"Enable external editing"),
-            description=_(u"help_content_ext_editor",
-                          default=u"When checked, an icon will be made visible on each page "
-                                  u"which allows you to edit content with your favorite editor "
-                                  u"instead of using browser-based editors. This requires an "
-                                  u"additional application called ExternalEditor installed "
-                                  u"client-side. Ask your administrator for more information if "
-                                  u"needed."),
+            label=_("label_ext_editor", default="Enable external editing"),
+            description=_("help_content_ext_editor",
+                          default="When checked, an icon will be made visible on each page "
+                                  "which allows you to edit content with your favorite editor "
+                                  "instead of using browser-based editors. This requires an "
+                                  "additional application called ExternalEditor installed "
+                                  "client-side. Ask your administrator for more information if "
+                                  "needed."),
             i18n_domain='plone',
             condition="python:'FSDPerson' in modules['Products.CMFCore.utils'].getToolByName(here, 'facultystaffdirectory_tool').getEnableMembraneTypes()",  # noqa
             ),
@@ -403,8 +403,8 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
 
     atapi.StringField('userpref_portal_skin',
         widget=atapi.SelectionWidget(
-            label=_(u"label_look", default=u"Look"),
-            description=_(u"help_look", default=u"Appearance of the site."),
+            label=_("label_look", default="Look"),
+            description=_("help_look", default="Appearance of the site."),
             i18n_domain='plone',
             format="select",
             condition="python:here.portal_skins.allow_any and 'FSDPerson' in modules['Products.CMFCore.utils'].getToolByName(here, 'facultystaffdirectory_tool').getEnableMembraneTypes()",  # noqa
@@ -417,11 +417,11 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
 
     atapi.BooleanField('userpref_invisible_ids',
         widget=atapi.BooleanWidget(
-            label=_(u"label_edit_short_names", default=u"Allow editing of Short Names"),
-            description=_(u"help_display_names",
-                          default=u"Determines if Short Names (also known as IDs) are "
-                                  u"changable when editing items. If Short Names are not "
-                                  u"displayed, they will be generated automatically."),
+            label=_("label_edit_short_names", default="Allow editing of Short Names"),
+            description=_("help_display_names",
+                          default="Determines if Short Names (also known as IDs) are "
+                                  "changable when editing items. If Short Names are not "
+                                  "displayed, they will be generated automatically."),
             i18n_domain='plone',
             condition="python:here.portal_properties.site_properties.visible_ids and 'FSDPerson' in modules['Products.CMFCore.utils'].getToolByName(here, 'facultystaffdirectory_tool').getEnableMembraneTypes()"  # noqa
             ),
@@ -434,9 +434,9 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         name='assistants',
         widget=ReferenceBrowserWidget
         (
-            label=_(u"FacultyStaffDirectory_label_assistants", default=u"Personal Assistant(s)"),
-            description=_(u"FacultyStaffDirectory_description_assistants",
-                          default=u"Assistants can edit your directory entry."),
+            label=_("FacultyStaffDirectory_label_assistants", default="Personal Assistant(s)"),
+            description=_("FacultyStaffDirectory_description_assistants",
+                          default="Assistants can edit your directory entry."),
             i18n_domain='FacultyStaffDirectory',
             allow_browse=0,
             allow_search=1,
@@ -456,13 +456,13 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         name='terminationDetails',
         allowable_content_types=config.ALLOWABLE_CONTENT_TYPES,
         widget=TinyMCEWidget(
-            label=_(u"FacultyStaffDirectory_label_termination_details",
-                    default=u"Termination details"),
-            description=_(u"FacultyStaffDirectory_description_termination_details",
-                          default=u"Message displayed to site visitors when the person's "
-                                  u"termination date has passed. Can be used to provide "
-                                  u"forwarding information or a link to someone who has "
-                                  u"taken over their responsibilities."),
+            label=_("FacultyStaffDirectory_label_termination_details",
+                    default="Termination details"),
+            description=_("FacultyStaffDirectory_description_termination_details",
+                          default="Message displayed to site visitors when the person's "
+                                  "termination date has passed. Can be used to provide "
+                                  "forwarding information or a link to someone who has "
+                                  "taken over their responsibilities."),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Employment Information",
@@ -514,18 +514,18 @@ class Person(atapi.OrderedBaseFolder, ATCTContent):
     # reorder the fields to move the dates into the employment information schemata along with the
     # termination details field and rename the effective and expiration dates.
     Person_schema['effectiveDate'].schemata = 'Employment Information'
-    Person_schema['effectiveDate'].widget.label = _(u"label_edit_hire_date", default=u"Hire Date")
+    Person_schema['effectiveDate'].widget.label = _("label_edit_hire_date", default="Hire Date")
     Person_schema['effectiveDate'].widget.description = _(
-        u"description_edit_hire_date",
-        default=u"The date when the person will be hired. If no date is selected the person "
-                u"will be considered hired immediately.")
+        "description_edit_hire_date",
+        default="The date when the person will be hired. If no date is selected the person "
+                "will be considered hired immediately.")
     Person_schema['expirationDate'].schemata = 'Employment Information'
-    Person_schema['expirationDate'].widget.label = _(u"label_edit_termination_date",
-                                                     default=u"Termination Date")
+    Person_schema['expirationDate'].widget.label = _("label_edit_termination_date",
+                                                     default="Termination Date")
     Person_schema['expirationDate'].widget.description = _(
-        u"description_edit_termination_date",
-        default=u"The date when the person leaves the organization. This will automatically make "
-                u"the person invisible for others at the given date.")
+        "description_edit_termination_date",
+        default="The date when the person leaves the organization. This will automatically make "
+                "the person invisible for others at the given date.")
     Person_schema.moveField('effectiveDate', after='specialties')
     Person_schema.moveField('expirationDate', after='effectiveDate')
     Person_schema.moveField('terminationDetails', after='expirationDate')
@@ -605,7 +605,7 @@ class Person(atapi.OrderedBaseFolder, ATCTContent):
         except AttributeError:
             # YTF doesn't this display on the New Person page?
             # Couldn't call superclass's Title() for some unknown reason
-            return u"new person"
+            return "new person"
 
         if self.getMiddleName():
             mn = " " + self.getMiddleName() + " "
@@ -831,10 +831,10 @@ class Person(atapi.OrderedBaseFolder, ATCTContent):
 
         fsd_tool = getToolByName(self, config.TOOLNAME)
         if (fsd_tool.getPhoneNumberRegex()):
-            self.schema['officePhone'].widget.description = u"Example: %s" % (
+            self.schema['officePhone'].widget.description = "Example: %s" % (
                 fsd_tool.getPhoneNumberDescription())
         if (fsd_tool.getIdLabel()):
-            self.schema['id'].widget.label = u"%s" % fsd_tool.getIdLabel()
+            self.schema['id'].widget.label = "%s" % fsd_tool.getIdLabel()
 
         # Make sure the default for the editor field is the same as the site defaut.
         # No idea why this isn't being handled properly.
@@ -911,7 +911,7 @@ class Person(atapi.OrderedBaseFolder, ATCTContent):
         if value != self.getId():
             parent = aq_parent(aq_inner(self))
             if value in parent.objectIds():
-                return _(u"An object with ID '%s' already exists in this folder") % value
+                return _("An object with ID '%s' already exists in this folder") % value
 
         # Make sure the ID fits the regex defined in the configuration:
         fsd_tool = getToolByName(self, config.TOOLNAME)
@@ -926,7 +926,7 @@ class Person(atapi.OrderedBaseFolder, ATCTContent):
             fsd_tool = getToolByName(self, config.TOOLNAME)
             regexString = fsd_tool.getPhoneNumberRegex()
             if regexString and not re.match(regexString, value):
-                return _(u"Please provide the phone number in the format %s") % (
+                return _("Please provide the phone number in the format %s") % (
                     fsd_tool.getPhoneNumberDescription())
 
     def spamProtectFSD(self, email):
@@ -951,11 +951,11 @@ class Person(atapi.OrderedBaseFolder, ATCTContent):
 
             if not passwordDigest:
                 if not password and not confirm:
-                    errors['password'] = _(u'An initial password must be set')
+                    errors['password'] = _('An initial password must be set')
                     return
             if password or confirm:
                 if password != confirm:
-                    errors['password'] = errors['confirmPassword'] = _(u'Passwords do not match')
+                    errors['password'] = errors['confirmPassword'] = _('Passwords do not match')
 
     ###
     # Methods to limit the referenceBrowserWidget start directory and search results

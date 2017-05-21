@@ -4,15 +4,15 @@ __author__ = """WebLion <support@weblion.psu.edu>"""
 __docformat__ = 'plaintext'
 
 # Subpackages
-import classification
-import committee
-import committeemembership
-import course
-import department
-import departmentalmembership
-import facultystaffdirectory
-import facultystaffdirectorytool
-import person
-import specialtiesfolder
-import specialty
-import specialtyinformation
+from . import classification
+from . import committee
+from . import committeemembership
+from . import course
+from . import department
+from . import departmentalmembership
+from . import facultystaffdirectory
+from . import facultystaffdirectorytool
+from . import person
+from . import specialtiesfolder
+from . import specialty
+from . import specialtyinformation

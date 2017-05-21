@@ -30,7 +30,7 @@ def modifyPersonOwnership(event):
             userFolder = getattr(parent, 'acl_users', None)
         
         if user is None:
-            raise KeyError, _(u"User %s cannot be found.") % userId
+            raise KeyError(_("User %s cannot be found.") % userId)
         
         context.changeOwnership(user, False)
 
@@ -59,7 +59,7 @@ def modifyPersonOwnership(event):
                 pid = assistant.id
                 user = userFolder.getUserById(pid)
                 if user is None:
-                    raise KeyError, _(u"User %s cannot be found.") % pid
+                    raise KeyError(_("User %s cannot be found.") % pid)
                 roles = list(context.get_local_roles_for_userid(pid))
                 roles.append('Owner')
                 context.manage_setLocalRoles(pid, roles)

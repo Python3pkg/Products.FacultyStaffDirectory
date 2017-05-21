@@ -3,7 +3,7 @@
 __author__ = """WebLion <support@weblion.psu.edu>"""
 __docformat__ = 'plaintext'
 
-from facultystaffdirectory import IFacultyStaffDirectoryContent
+from .facultystaffdirectory import IFacultyStaffDirectoryContent
 
 class ISpecialty(IFacultyStaffDirectoryContent):
     """an academic specialty

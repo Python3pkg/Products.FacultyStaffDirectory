@@ -14,7 +14,7 @@ from Products.CMFCore import DirectoryView
 from Products.CMFCore import permissions as cmfpermissions
 from Products.CMFCore import utils as cmfutils
 from Products.CMFPlone.utils import ToolInit
-from config import *
+from .config import *
 DirectoryView.registerDirectory('skins', product_globals)
 
 from Products.CMFPlone.interfaces import IPloneSiteRoot
@@ -27,21 +27,21 @@ FSDMessageFactory = MessageFactory('FacultyStaffDirectory')
 def initialize(context):
 
     # imports packages and types for registration
-    import interfaces
+    from . import interfaces
 
-    import FacultyStaffDirectory
-    import Classification
-    import Person
-    import Course
-    import CommitteesFolder
-    import Committee
-    import Specialty
-    import SpecialtiesFolder
-    import PersonGrouping
-    import Department
-    import CommitteeMembership
-    import SpecialtyInformation
-    import DepartmentalMembership
+    from . import FacultyStaffDirectory
+    from . import Classification
+    from . import Person
+    from . import Course
+    from . import CommitteesFolder
+    from . import Committee
+    from . import Specialty
+    from . import SpecialtiesFolder
+    from . import PersonGrouping
+    from . import Department
+    from . import CommitteeMembership
+    from . import SpecialtyInformation
+    from . import DepartmentalMembership
 
     # Initialize portal content
     all_content_types, all_constructors, all_ftis = process_types(

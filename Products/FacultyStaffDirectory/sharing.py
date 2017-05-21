@@ -4,5 +4,5 @@ from plone.app.workflow.interfaces import ISharingPageRole as interfaceToImpleme
 
 class PersonnelManagerRole(object):
     implements(interfaceToImplement)
-    title = _(u"title_can_manage_personnel", default=u"Can manage personnel")
+    title = _("title_can_manage_personnel", default="Can manage personnel")
     required_permission = 'Manage portal'

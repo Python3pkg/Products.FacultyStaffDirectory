@@ -295,7 +295,7 @@ def addSampleContent(portal):
          def456_person_groupings,
          ),
         ('ghi789',
-         dict(firstName=u'G\'oldë', middleName=u'Hatterǩ', lastName='Itoppi',
+         dict(firstName='G\'oldë', middleName='Hatterǩ', lastName='Itoppi',
               password='itoppi',
               email='ghi789@example.com',
               classifications=(classifications['graduate-students'].UID(),),
@@ -304,7 +304,7 @@ def addSampleContent(portal):
          ),
         # Arabic Name translation done by http://www.languages-of-the-world.us/YourNameIn/Arabic.html
         ('jkl110',
-         dict(firstName=u'تخطط', middleName=u'نخا', lastName=u'جي',  # Ji Noa Touu
+         dict(firstName='تخطط', middleName='نخا', lastName='جي',  # Ji Noa Touu
               password='110jkl',
               email='jkl110@example.com',
               classifications=(classifications['faculty'].UID(),),
@@ -312,13 +312,13 @@ def addSampleContent(portal):
          lambda p: None,
          ),
         ('mno111',
-         dict(firstName=u'Mi', middleName=u'Nylon', lastName='O\'catta',
+         dict(firstName='Mi', middleName='Nylon', lastName='O\'catta',
               password='mi',
               email='mi@example.com',
               classifications=(classifications['faculty'].UID(),
                                classifications['staff'].UID(),
                                ),
-              committees=[c.UID() for c in committees.values()],
+              committees=[c.UID() for c in list(committees.values())],
               departments=(departments['human-resources'].UID(),),
               ),
          lambda p: None,

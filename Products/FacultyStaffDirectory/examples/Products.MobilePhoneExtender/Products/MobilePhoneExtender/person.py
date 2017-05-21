@@ -29,8 +29,8 @@ class PersonExtender(object):
                 searchable=True,
                 schemata="Contact Information",
                 widget=StringWidget(
-                    label=_(u"FSDMobilePhoneExtender_label_MobilePhone", default=u"Mobile Phone"),
-                    description=_(u"FSDMobilePhoneExtender_description_MobilePhone", default=u"Demo field added by the MobilePhoneExtender product."),
+                    label=_("FSDMobilePhoneExtender_label_MobilePhone", default="Mobile Phone"),
+                    description=_("FSDMobilePhoneExtender_description_MobilePhone", default="Demo field added by the MobilePhoneExtender product."),
                     i18n_domain='FSDMobilePhoneExtender',
                 )
             )

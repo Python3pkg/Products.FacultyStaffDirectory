@@ -48,8 +48,8 @@ Tool_schema = BaseSchema.copy() +Schema((
     StringField(
         name='phoneNumberRegex',
         widget=StringWidget(
-            label=_(u"FacultyStaffDirectory_label_personPhoneNumberFormat", default=u"Phone number format"),
-            description=_(u"FacultyStaffDirectory_description_personPhoneNumberFormat", default=u"A regular expression that a Person's phone number must match. Leave blank to disable phone number validation."),
+            label=_("FacultyStaffDirectory_label_personPhoneNumberFormat", default="Phone number format"),
+            description=_("FacultyStaffDirectory_description_personPhoneNumberFormat", default="A regular expression that a Person's phone number must match. Leave blank to disable phone number validation."),
             i18n_domain='FacultyStaffDirectory',
             
         ),
@@ -60,19 +60,19 @@ Tool_schema = BaseSchema.copy() +Schema((
     StringField(
         name='phoneNumberDescription',
         widget=StringWidget(
-            label=_(u"FacultyStaffDirectory_label_personPhoneNumberDescription", default=u"Phone number example"),
-            description=_(u"FacultyStaffDirectory_description_personPhoneNumberDescription", default=u"Describe the above phone number rule in a human-readable format: for example, (555) 555-5555."),
+            label=_("FacultyStaffDirectory_label_personPhoneNumberDescription", default="Phone number example"),
+            description=_("FacultyStaffDirectory_description_personPhoneNumberDescription", default="Describe the above phone number rule in a human-readable format: for example, (555) 555-5555."),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="General",
-        default=u"(555) 555-5555",
+        default="(555) 555-5555",
     ),
     
     BooleanField(
         name='obfuscateEmailAddresses',
         widget=BooleanWidget(
-            label=_(u"FacultyStaffDirectory_label_obfuscateEmailAddressesDescription", default=u"Custom email obfuscation"),
-            description=_(u"FacultyStaffDirectory_description_obfuscateEmailAddressesDescription", default=u"Format email addresses like \"someone AT here DOT com\" rather than using Plone's default spam armoring."),
+            label=_("FacultyStaffDirectory_label_obfuscateEmailAddressesDescription", default="Custom email obfuscation"),
+            description=_("FacultyStaffDirectory_description_obfuscateEmailAddressesDescription", default="Format email addresses like \"someone AT here DOT com\" rather than using Plone's default spam armoring."),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="General",
@@ -82,8 +82,8 @@ Tool_schema = BaseSchema.copy() +Schema((
     StringField(
         name='idLabel',
         widget=StringWidget(
-            label=_(u"FacultyStaffDirectory_label_personIdLabel", default=u"Person ID Label"),
-            description=_(u"FacultyStaffDirectory_description_personIdLabel", default=u"The name of the ID used by your institution"),
+            label=_("FacultyStaffDirectory_label_personIdLabel", default="Person ID Label"),
+            description=_("FacultyStaffDirectory_description_personIdLabel", default="The name of the ID used by your institution"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Membership",
@@ -94,8 +94,8 @@ Tool_schema = BaseSchema.copy() +Schema((
     StringField(
         name='idRegex',
         widget=StringWidget(
-            label=_(u"FacultyStaffDirectory_label_personIdFormat", default=u"Person ID format"),
-            description=_(u"FacultyStaffDirectory_description_personIdFormat", default=u"A regular expression that a Persons ID must match. Defaults to the value specified in portal_registration."),
+            label=_("FacultyStaffDirectory_label_personIdFormat", default="Person ID format"),
+            description=_("FacultyStaffDirectory_description_personIdFormat", default="A regular expression that a Persons ID must match. Defaults to the value specified in portal_registration."),
             i18n_domain='FacultyStaffDirectory',
             
         ),
@@ -107,20 +107,20 @@ Tool_schema = BaseSchema.copy() +Schema((
     StringField(
         name='idRegexErrorMessage',
         widget=StringWidget(
-            label=_(u"FacultyStaffDirectory_label_personIdFormatErrorMessage", default=u"Person ID format error message"),
-            description=_(u"FacultyStaffDirectory_description_personIdFormatErrorMessage", default=u"The error message returned when the Person ID entered does not match the specified format"),
+            label=_("FacultyStaffDirectory_label_personIdFormatErrorMessage", default="Person ID format error message"),
+            description=_("FacultyStaffDirectory_description_personIdFormatErrorMessage", default="The error message returned when the Person ID entered does not match the specified format"),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Membership",
-        default=u"Invalid user id",
+        default="Invalid user id",
         required=True,
     ),
     
     LinesField(
         name='enableMembraneTypes',
         widget=InAndOutWidget(
-            label=_(u"FacultyStaffDirectory_label_enableMembraneTypes", default=u"Select the content types to integrate with Plone's users and groups"),
-            description=_(u"FacultyStaffDirectory_description_enableMembraneTypes", default=u"Integrated types appear on the right; non-integrated on the left. You may move selected items from one column to the other."),
+            label=_("FacultyStaffDirectory_label_enableMembraneTypes", default="Select the content types to integrate with Plone's users and groups"),
+            description=_("FacultyStaffDirectory_description_enableMembraneTypes", default="Integrated types appear on the right; non-integrated on the left. You may move selected items from one column to the other."),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Membership",
@@ -133,8 +133,8 @@ Tool_schema = BaseSchema.copy() +Schema((
     LinesField(
         name='activeMembraneStates',
         widget=MultiSelectionWidget(
-            label=_(u"FacultyStaffDirectory_label_activeMembraneStates", default=u"Select the workflow states which indicate membership and/or group behavior"),
-            description=_(u"FacultyStaffDirectory_description_activeMembraneStates", default=u"Select the workflow states below for which membership behavior should be enabled for Person objects or group behavior should be enabled for FacultyStaffDirectory, Classification, Committee, and Department objects."),
+            label=_("FacultyStaffDirectory_label_activeMembraneStates", default="Select the workflow states which indicate membership and/or group behavior"),
+            description=_("FacultyStaffDirectory_description_activeMembraneStates", default="Select the workflow states below for which membership behavior should be enabled for Person objects or group behavior should be enabled for FacultyStaffDirectory, Classification, Committee, and Department objects."),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Membership",
@@ -147,8 +147,8 @@ Tool_schema = BaseSchema.copy() +Schema((
     BooleanField(
         name='useInternalPassword',
         widget=BooleanWidget(
-            label=_(u"FacultyStaffDirectory_label_useInternalPassword", default=u"Person objects provide user passwords"),
-            description=_(u"FacultyStaffDirectory_description_useInternalPassword", default=u"Should user passwords be stored as part of the Person? If you're using another PAS plugin to handle authorization, you'll want to turn this off."),
+            label=_("FacultyStaffDirectory_label_useInternalPassword", default="Person objects provide user passwords"),
+            description=_("FacultyStaffDirectory_description_useInternalPassword", default="Should user passwords be stored as part of the Person? If you're using another PAS plugin to handle authorization, you'll want to turn this off."),
             i18n_domain='FacultyStaffDirectory',
         ),
         schemata="Membership",

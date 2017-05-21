@@ -29,7 +29,7 @@ schema = atapi.Schema((
     RelationField(
         name='people',
         widget=ReferenceBrowserWidget(
-            label=_(u"FacultyStaffDirectory_label_people", default=u"People"),
+            label=_("FacultyStaffDirectory_label_people", default="People"),
             i18n_domain='FacultyStaffDirectory',
             allow_browse=0,
             allow_search=1,
@@ -47,8 +47,8 @@ schema = atapi.Schema((
         name='overviewImage',
         schemata='Overview',
         widget=atapi.ImageWidget(
-            label=_(u"FacultyStaffDirectory_label_overview_image",
-                    default=u"Overview image (used for specialty overview view)"),
+            label=_("FacultyStaffDirectory_label_overview_image",
+                    default="Overview image (used for specialty overview view)"),
             i18n_domain='FacultyStaffDirectory',
             default_content_type='image/gif',
         ),
@@ -64,8 +64,8 @@ schema = atapi.Schema((
         schemata='Overview',
         allowable_content_types=config.ALLOWABLE_CONTENT_TYPES,
         widget=TinyMCEWidget(
-            label=_(u"FacultyStaffDirectory_label_overview_text",
-                    default=u"Overview text (used for specialty overview view)"),
+            label=_("FacultyStaffDirectory_label_overview_text",
+                    default="Overview text (used for specialty overview view)"),
             i18n_domain='FacultyStaffDirectory',
         ),
         default_output_type="text/x-html-safe",

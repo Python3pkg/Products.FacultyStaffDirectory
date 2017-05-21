@@ -13,7 +13,7 @@ def from_2_x_to_3_0(context):
                        ('FSDFacultyStaffDirectory',),
                        ('fsd_directory_workflow',),
                        {})
-    except Exception, message:
+    except Exception as message:
         log.error(message)
         raise
 
@@ -36,7 +36,7 @@ def from_3_0b3_to_3_0b4(context):
     registry = context.getImportStepRegistry()
     
     # drop legacy import steps, if they exist
-    LEGACY_IMPORT_STEPS = [u'upgrade_2_to_3', u'hideMemberPrefs', u'installKupuResources', u'installVersionedTypes', u'installRelationsRules', u'unindexFSDTool']
+    LEGACY_IMPORT_STEPS = ['upgrade_2_to_3', 'hideMemberPrefs', 'installKupuResources', 'installVersionedTypes', 'installRelationsRules', 'unindexFSDTool']
     for step in LEGACY_IMPORT_STEPS:
         if step in registry.listSteps() and registry.getStepMetadata(step)['handler'] == ('Products.FacultyStaffDirectory.setuphandlers.%s' % step):
             registry.unregisterStep(step)        

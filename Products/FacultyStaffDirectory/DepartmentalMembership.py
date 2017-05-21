@@ -15,7 +15,7 @@ schema = Schema((
     StringField(
         name='position',
         widget=StringWidget(
-            label=_(u"FacultyStaffDirectory_label_position", default=u"Position"),
+            label=_("FacultyStaffDirectory_label_position", default="Position"),
             i18n_domain='FacultyStaffDirectory',
         )
     ),
@@ -23,7 +23,7 @@ schema = Schema((
     StringField(
         name='title',
         widget=StringWidget(
-            label=_(u"FacultyStaffDirectory_label_title", default=u"Title"),
+            label=_("FacultyStaffDirectory_label_title", default="Title"),
             i18n_domain='FacultyStaffDirectory',
             visible={'edit': 'invisible', 'view': 'invisible' },
         )

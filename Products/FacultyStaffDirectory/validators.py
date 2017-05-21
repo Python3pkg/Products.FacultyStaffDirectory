@@ -41,5 +41,5 @@ class SequenceValidator(object):
 classImplements(SequenceValidator, IValidator)
 
 # Change some error messages to improve grammar
-validation.validatorFor('isURL').errmsg = _(u'is not a valid URL.'),
+validation.validatorFor('isURL').errmsg = _('is not a valid URL.'),
 

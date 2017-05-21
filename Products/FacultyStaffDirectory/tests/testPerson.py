@@ -41,13 +41,13 @@ class testPerson(testPlone):
             person = self.person
         allowed_tasks = ['edit', 'create',]
         if task not in allowed_tasks:
-            raise ValueError, 'parameter "task" must be one of %s' % allowed_tasks
+            raise ValueError('parameter "task" must be one of %s' % allowed_tasks)
         else:
             person.reindexObject()
             try:
                 my_task = allowed_tasks.index(task)
             except ValueError:
-                raise ValueError, '%s not in list of approved GUI tasks' % task
+                raise ValueError('%s not in list of approved GUI tasks' % task)
             
             if my_task==0:
                 person.at_post_edit_script()
@@ -71,7 +71,7 @@ class testWithoutSpecialties(testPerson):
     
     def testCreatePerson(self):
         # Make sure the Title override is working
-        self.failUnlessEqual(self.person.Title(), u"Test Person")
+        self.failUnlessEqual(self.person.Title(), "Test Person")
         
         # Check the sortable name
         self.failUnlessEqual(self.person.getSortableName(), ('person', 'test'))
@@ -113,7 +113,7 @@ class testWithoutSpecialties(testPerson):
         self.person.setMiddleName('Joe')
         
         #title should change
-        self.failUnlessEqual(self.person.Title(), u"Test Joe Person")
+        self.failUnlessEqual(self.person.Title(), "Test Joe Person")
         
         #but sortable name shouldn't
         self.failUnlessEqual(self.person.getSortableName(), ('person', 'test'))
@@ -123,7 +123,7 @@ class testWithoutSpecialties(testPerson):
         self.person.setSuffix('WTF')
         
         #Title should change
-        self.failUnlessEqual(self.person.Title(), u"Test Person, WTF")
+        self.failUnlessEqual(self.person.Title(), "Test Person, WTF")
         
         #But Sortable Name shouldn't
         self.failUnlessEqual(self.person.getSortableName(), ('person', 'test'))
@@ -135,7 +135,7 @@ class testWithoutSpecialties(testPerson):
         self.person.setMiddleName('Joe')
         
         #Title should change
-        self.failUnlessEqual(self.person.Title(), u"Test Joe Person, WTF")
+        self.failUnlessEqual(self.person.Title(), "Test Joe Person, WTF")
         
         #But Sortable Name shouldn't
         self.failUnlessEqual(self.person.getSortableName(), ('person', 'test'))
@@ -330,7 +330,7 @@ class testWithoutSpecialties(testPerson):
         self.failUnlessEqual(val(['http://www.foo.com', 'http://bar.com']), 1, 'Validator should check multiple urls and pass if all are valid.')
     
     def testVCard(self):
-        self.person.setOfficeCity(u'München')
+        self.person.setOfficeCity('München')
         expectedUnicodeOutput = "M\xc3\xbcnchen"
         self.failUnless(expectedUnicodeOutput in self.person.vcard_view(self.app.REQUEST, self.app.REQUEST.response), "Improperly handled unicode in vCard output.")
     

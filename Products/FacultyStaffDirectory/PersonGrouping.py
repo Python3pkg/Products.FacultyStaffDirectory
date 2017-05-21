@@ -27,7 +27,7 @@ schema = ATContentTypeSchema.copy() + atapi.Schema((
         name='text',
         allowable_content_types=config.ALLOWABLE_CONTENT_TYPES,
         widget=TinyMCEWidget(
-            label=_(u"FacultyStaffDirectory_label_text", default=u"Body Text"),
+            label=_("FacultyStaffDirectory_label_text", default="Body Text"),
             i18n_domain='FacultyStaffDirectory',
         ),
         default_output_type="text/x-html-safe",

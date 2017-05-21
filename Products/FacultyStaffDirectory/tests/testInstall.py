@@ -104,7 +104,7 @@ class testInstall(testPlone):
         pMap = pr.getPolicyMap()
         for t in versionedTypes:
             self.failUnless(t in pMap)
-            self.failUnless(pMap[t], [u'at_edit_autoversion', u'version_on_revert'])
+            self.failUnless(pMap[t], ['at_edit_autoversion', 'version_on_revert'])
             
     def testKupuLinkableTypesSetup(self):
         if self.has_kupu:
@@ -288,7 +288,7 @@ class testLargeDirectory(testPlone):
         end_time = time.time()
         elapsed_time = end_time-start_time
         reinstall_report = "\nreinstalling FSD with a directory containing %s people took %s seconds\n" % (self.numPeople, elapsed_time)
-        print "\n" + ("*" * 20) + reinstall_report + ("*" * 20)
+        print("\n" + ("*" * 20) + reinstall_report + ("*" * 20))
         
         # test that a person in the FSD is still a user
         self.failUnless(acl.getUserById(id=user_id),"Problem:  after reinstall person is not listed in acl_users")
